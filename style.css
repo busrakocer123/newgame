@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Değişiklik burada */
+    background: violet;
+    display:flex;
+    align-items: center;
+}
+
+
+
+#gamePlace{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    border: 0;
+    background-color: yellow;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position:relative;
+    
+}
+
+#player{
+    position: absolute;
+    width: 10vw;
+    height: 10vh;
+    bottom: 0;
+    background-color: black;
+    
+
+}
+#obstacle{
+    position: absolute;
+    width: 10vw;
+    height: 10vh;
+    top: 0;
+    background-color: red;
+
+}
+
+#point{
+    width: 10vw;
+    height: 10vh;
+    top: 0;
+    background-color: green;
+}
