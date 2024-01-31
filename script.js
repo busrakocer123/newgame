@@ -18,8 +18,8 @@ class Player {
         this.playerElement.style.bottom = this.positionY + "vh";
         
         //step3: append to the dom: `parentElm.appendChild()`
-        const gameSpace = document.getElementById("gamespace");
-        gameSpace.appendChild(this.playerElement);
+        const gamePlace = document.getElementById("gamePlace");
+        gamePlace.appendChild(this.playerElement);
     }
     
     moveLeft() {
@@ -43,10 +43,10 @@ class Obstacle {
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
-            "path/to/image1.png",
-            "path/to/image2.png",
-            // ... diğer 8 görüntü yolu ...
-            "path/to/image10.png"
+            "image1",
+            "image2",
+            
+            "image10"
         ];
         this.imageSrc = this.getRandomImage();
         
@@ -61,17 +61,21 @@ class Obstacle {
     createObstacleElement() {
         // step1: create the element
         this.obstacleElement = document.createElement("div");
+        this.obstacleElement.style.width=  this.width +"vw" ;
+        this.obstacleElement.style.height= this.height+ "vh" ;
+        this.obstacleElement.style.bottom=this.positionY +"vh";
+        this.obstacleElement.style.left=  this.positionX + "vw";
         // step2: add content or modify
         this.obstacleElement.setAttribute("class", "obstacle");
-        const obstacleImage = document.createElement("img");
+       /* const obstacleImage = document.createElement("img");
         obstacleImage.src = this.imageSrc;
         obstacleImage.style.width = "10%";
-        obstacleImage.style.height = "10%";
+        obstacleImage.style.height = "10%";*/
 
-        this.obstacleElement.appendChild(obstacleImage);
+        //this.obstacleElement.appendChild(obstacleImage);
 
-        const gameSpace = document.getElementById("gameSpace");
-        gameSpace.appendChild(this.obstacleElement);
+       const gamePlace = document.getElementById("gamePlace");
+        gamePlace.appendChild(this.obstacleElement);
     }
     moveDown(){
         this.positionY--;
@@ -86,9 +90,9 @@ class Point {
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
-            "path/to/image1.png",
-            "path/to/image2.png",
-            // ... diğer 8 görüntü yolu ...
+            "image1",
+            "image2",
+            
             "path/to/image10.png"
         ];
         this.imageSrc = this.getRandomImage();
@@ -121,13 +125,13 @@ class Point {
 
         this.pointElement.appendChild(pointImage);
 
-        const gameSpace = document.getElementById("gameSpace");
-        gameSpace.appendChild(this.pointElement);
+        const gamePlace = document.getElementById("gamePlace");
+        gamePlace.appendChild(this.pointElement);
 
     }
     moveDown(){
         this.positionY--;
-        this.obstacleElement.style.bottom = this.positionY + "vh"; 
+        this.pointElement.style.bottom = this.positionY + "vh"; 
     }
 }
 
@@ -144,7 +148,7 @@ class Result{
 
             
                 
-            this.resultElementElement = document.createElement("div");
+            this.resultElement = document.createElement("div");
                
             this.resultElement.setAttribute("id", "result");
             this.resultElement.style.width = this.width + "vw"
@@ -153,9 +157,8 @@ class Result{
             this.resultElement.style.bottom = this.positionY + "vh";
                 
                 
-            const gameSpace = document.getElementById("gamespace");
-                
-            gameSpace.appendChild(this.resultElement);
+            const gamePlace = document.getElementById("gamePlace");
+            gamePlace.appendChild(this.resultElement);
 
             }
 
@@ -171,9 +174,10 @@ class Result{
 const player = new Player();
 const obstacles = []; 
 const points = [];
+const result = new Result();
 
 setInterval(() => {
-    // Sadece bir tane rastgele engel oluştur
+    
     const newObstacle = new Obstacle();
     obstacles.push(newObstacle);
 
@@ -209,6 +213,7 @@ setInterval(() => {
             console.log("point collected");
             pointInstance.increaseScore(); // Puanı artırma
             points.splice(index, 1); // Toplanan puanı listeden kaldır
+            result.showResult(player.score);
         }
     });
 }, 30);
@@ -220,3 +225,16 @@ document.addEventListener("keydown", (e) => {
         player.moveRight();
     }
 });
+
+
+
+document.getElementById("startButton").addEventListener("click", startGame);
+
+
+function startGame() {
+    
+    document.getElementById("startButton").style.display = "none";
+
+    
+    console.log("Game started!");
+}
