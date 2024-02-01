@@ -48,11 +48,11 @@ class Obstacle {
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
-            "/images/insect1.png",
-            "./images/insect2.png",
+            "./images/insect8.jpeg",
+           /* "./images/insect2.png",
             "./images/insect3.png",
             "./images/insect4.png",
-            "./images/insect5.png",
+            "./images/insect5.png",*/
             
             
             
@@ -188,12 +188,16 @@ class Result{
 
         }
 
-
-
 const player = new Player();
 const obstacles = []; 
 const points = [];
 const result = new Result();
+
+ function startGameFunction(){    
+    
+document.getElementById("startButton").style.display = "none";   
+
+
 
 setInterval(() => {
     
@@ -246,18 +250,20 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
+ }
+
+document.getElementById("startButton").addEventListener("click", startGameFunction );
 
 
-document.getElementById("startButton").addEventListener("click", startGame);
-
-
-function startGame() {
+// function startGame() {
     
-    document.getElementById("startButton").style.display = "none";
+//     document.getElementById("startButton").style.display = "none";
 
     
-    console.log("Game started!");
-}
+//     console.log("Game started!");
+// }
+
+ 
 /*
 
 class button {
