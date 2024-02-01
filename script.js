@@ -44,14 +44,18 @@ class Player {
 class Obstacle {
     constructor(){
         this.width = 10;
-        this.height = 10;
+        this.height = 15;
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
             "/Users/busrakocer/ironhack/gameProject/images/ınsect1.png",
-            "./i",
+            "./images/ınsect2.png",
+            "./images/ınsect3.png",
+            "./images/ınsect4.png",
+            "./images/ınsect5.png",
+            "./images/ınsect6.png",
             
-            "image10"
+            
         ];
         this.imageSrc = this.getRandomImage();
         
@@ -72,12 +76,12 @@ class Obstacle {
         this.obstacleElement.style.left=  this.positionX + "vw";
         // step2: add content or modify
         this.obstacleElement.setAttribute("class", "obstacle");
-       /* const obstacleImage = document.createElement("img");
+       const obstacleImage = document.createElement("img");
         obstacleImage.src = this.imageSrc;
-        obstacleImage.style.width = "10%";
-        obstacleImage.style.height = "10%";*/
+        obstacleImage.style.width = this.width +"vw" ;
+        obstacleImage.style.height = this.height+ "vh" ;
 
-        //this.obstacleElement.appendChild(obstacleImage);
+        this.obstacleElement.appendChild(obstacleImage);
 
        const gamePlace = document.getElementById("gamePlace");
         gamePlace.appendChild(this.obstacleElement);
@@ -91,15 +95,13 @@ class Obstacle {
 class Point {
     constructor(){
         this.width = 10;
-        this.height = 10;
+        this.height = 15;
         
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
-            "image1",
-            "image2",
-            
-            "path/to/image10.png"
+            "./images/milk1.png",
+           
         ];
         this.imageSrc = this.getRandomImage();
         this.score=0;
@@ -129,12 +131,12 @@ class Point {
         this.pointElement.style.height= this.height+ "vh" ;
         this.pointElement.style.bottom=this.positionY +"vh";
         this.pointElement.style.left=  this.positionX + "vw";
-       /* const pointImage = document.createElement("img");
+        const pointImage = document.createElement("img");
         pointImage.src = this.imageSrc;
-        pointImage.style.width = "10%";
-        pointImage.style.height = "10%";
+        pointImage.style.width = this.width +"vw" ;
+        pointImage.style.height = this.height+ "vh" ;
 
-        this.pointElement.appendChild(pointImage);*/
+        this.pointElement.appendChild(pointImage);
 
         const gamePlace = document.getElementById("gamePlace");
         gamePlace.appendChild(this.pointElement);
