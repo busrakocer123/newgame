@@ -48,12 +48,12 @@ class Obstacle {
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
-            "/Users/busrakocer/ironhack/gameProject/images/ınsect1.png",
-            "./images/ınsect2.png",
-            "./images/ınsect3.png",
-            "./images/ınsect4.png",
-            "./images/ınsect5.png",
-            "./images/ınsect6.png",
+            "/images/insect1.png",
+            "./images/insect2.png",
+            "./images/insect3.png",
+            "./images/insect4.png",
+            "./images/insect5.png",
+            
             
             
         ];
