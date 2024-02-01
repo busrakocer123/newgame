@@ -8,16 +8,16 @@ class Player {
         this.createPlayerElement();
     }
     createPlayerElement(){
-        // step1: create the player element
+       
         this.playerElement = document.createElement("div");
-        // step2: add content or modify
+        
         this.playerElement.setAttribute("id", "player");
         this.playerElement.style.width = this.width + "vw"
         this.playerElement.style.height = this.height + "vh"
         this.playerElement.style.left = this.positionX + "vw";
         this.playerElement.style.bottom = this.positionY + "vh";
         
-        //step3: append to the dom: `parentElm.appendChild()`
+        
         const gamePlace = document.getElementById("gamePlace");
         gamePlace.appendChild(this.playerElement);
     }
@@ -146,10 +146,10 @@ class Result{
         this.width = 10;
         this.height = 10;
         this.positionX = 0;
-        this.positionY = 100;
+        this.positionY = 90;
         this.resultElement = null;
         this.createResultElement();
-    }
+       }  
         createResultElement(){
 
             
