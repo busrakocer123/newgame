@@ -4,6 +4,7 @@ class Player {
         this.height = 10;
         this.positionX = 50;
         this.positionY = 0;
+        this.score=null;
         this.playerElement = null;
         this.createPlayerElement();
     }
@@ -21,6 +22,10 @@ class Player {
         const gamePlace = document.getElementById("gamePlace");
         gamePlace.appendChild(this.playerElement);
     }
+    increaseScore() {
+        this.score++;
+        console.log("Score: " + this.score);
+        return this.score; }
     
     moveLeft() {
         if (this.positionX > 0) {
@@ -139,6 +144,11 @@ class Point {
         this.positionY--;
         this.pointElement.style.bottom = this.positionY + "vh"; 
     }
+
+    removePoint() {
+        this.pointElement.parentNode.removeChild(this.pointElement);
+    }
+
 }
 
 class Result{
@@ -148,6 +158,7 @@ class Result{
         this.positionX = 0;
         this.positionY = 90;
         this.resultElement = null;
+        this.score= null;
         this.createResultElement();
        }  
         createResultElement(){
@@ -217,9 +228,10 @@ setInterval(() => {
             player.positionY + player.height > pointInstance.positionY
         ) {
             console.log("point collected");
-            pointInstance.increaseScore(); // increase score
+            player.increaseScore(); // Oyuncunun skorunu artır
             points.splice(index, 1); // Toplanan puanı listeden kaldır
-            result.showResult(player.score);
+            result.showResult(player.score); 
+            pointInstance.removePoint();
         }
     });
 }, 30);
