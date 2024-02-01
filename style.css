@@ -13,7 +13,8 @@ body {
     width: 100vw;
     height: 100vh;
     border: 0;
-    background-color: yellow;
+    background-image: url("./images/tepe.jpeg" );
+    background-size: cover;
     align-items: center;
     justify-content: center;
     margin: auto;
@@ -25,7 +26,8 @@ body {
     width: 10vw;
     height: 10vh;
     bottom: 0;
-    background-color: black;
+    background-image: url("./images/teletubbies2.png");
+    background-size: cover;
 }
 
 .obstacle {
