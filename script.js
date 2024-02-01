@@ -48,7 +48,11 @@ class Obstacle {
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
-            "./images/insect8.jpeg",
+            "./images/i1.png",
+            "./images/i2.png",
+            "./images/i3.png",
+            "./images/i4.png",
+            "./images/i5.png",
            /* "./images/insect2.png",
             "./images/insect3.png",
             "./images/insect4.png",
@@ -68,7 +72,7 @@ class Obstacle {
         return this.images[randomIndex];
     }
     createObstacleElement() {
-        // step1: create the element
+        
         this.obstacleElement = document.createElement("div");
         this.obstacleElement.style.width=  this.width +"vw" ;
         this.obstacleElement.style.height= this.height+ "vh" ;
@@ -100,7 +104,8 @@ class Point {
         this.positionX = Math.floor(Math.random() * (100 - this.width + 1)); // random number between 0 and (100 - this.width)
         this.positionY = 100;
         this.images = [
-            "./images/milk1.png",
+            "./images/milk2.png",
+            "./images/cookie.png",
            
         ];
         this.imageSrc = this.getRandomImage();

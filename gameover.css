@@ -23,3 +23,9 @@ body {
     margin: auto;
     position: relative;
 }
+
+
+
+#gameoverpage a {
+    margin-top: 20px; /* İhtiyaca göre ayarlayabilirsiniz */
+}

@@ -32,16 +32,31 @@ body {
 
 .obstacle {
     position:absolute;
-    background-color: red; /* Obstacle color */
+   /*background-color: red; */
 }
 
 .point {
     position:absolute;
-    background-color: green; /* Point color */
+    /*background-color: green; Point color */
 }
 
 #result {
     position: absolute;
-    background-color: blue; /* Result color */
+    display: grid;
+    place-items: center; 
+    background-color: rgba(212, 255, 0, 0.5); /* Result color */
+    
+    text-align: center; 
+    color: white;
+
 }
 
+#startButton {
+    position:absolute;
+    background-color: #5baf4c; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    
+}
