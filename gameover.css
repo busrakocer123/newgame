@@ -3,9 +3,12 @@ body {
     padding: 0;
     height: 100vh;
     
-    background: violet;
+    background: rgb(236, 234, 83);
+  
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 
@@ -13,19 +16,44 @@ body {
 
 #gameoverpage {
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     border: 0;
-    background-color: blueviolet;
+    background-color: rgb(205, 226, 43);
+    margin: auto;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto;
     position: relative;
+   
 }
 
+#button {
+    position: absolute;
+    background-color: #5baf4c;
+    color: white;
+    margin-bottom: 10vh;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+#gameover {
+    position:absolute;
+    margin-bottom: 50vh;
+}
+#gif {
+    width: 30vw; /* Örneğin, genişlik ve yüksekliği ihtiyaca göre ayarlayabilirsiniz */
+    height: 20vh;
+    margin-bottom: 20px;
+}
 
-
-#gameoverpage a {
-    margin-top: 20px; /* İhtiyaca göre ayarlayabilirsiniz */
+/* Dilerseniz gif'inize gölgeler, kenar yuvarlatma gibi özellikler ekleyebilirsiniz */
+#gif img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
